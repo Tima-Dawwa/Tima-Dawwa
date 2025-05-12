@@ -1,21 +1,18 @@
-<h1 align="center">Hi, I'm Tima 👋</h1>
-<h3 align="center">AI Developer | Flutter & React.js Developer | Tech Enthusiast</h3>
-
+<h1 align="center">Hello, I'm Tima 👋</h1>
+<h3 align="center">AI Specialist • Full-Stack Developer • Flutter Developer</h3>
+<h2 align="center">Creative Technologist | Problem Solver</h2>
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=tima-dawwa&label=Profile%20views&color=0e75b6&style=flat" alt="visitor badge" />
+  <img src="https://komarev.com/ghpvc/?username=tima-dawwa&label=Profile%20views&color=0e75b6&style=flat" alt="Profile views" />
 </p>
+ 
+💡 I am a dedicated **AI Specialist** and **Full-Stack Developer** with a passion for building innovative systems that bridge the gap between cutting-edge technology and real-world solutions. My work spans deep learning models, mobile applications, and immersive 3D visual simulations, always with a focus on creating impactful outcomes.
 
----
-
-💡 I'm a passionate **AI Engineer and Full-Stack Developer** focused on solving real-world problems through intelligent systems and modern, user-friendly applications.
-
-- 🎓 Bachelor's in IT | AI Specialization – Damascus University (2021–present)
-- 🔭 Working on: AI simulations, NLP pipelines, 3D visualizations, and mobile/web apps
-- 🌱 Currently learning: Generative AI, LangChain, advanced visual computing
-- 🧠 Interests: Deep Learning, Human-AI Interaction, Software Architecture
-- 📫 Reach me at: **tima302t@gmail.com**
-
----
+- 🎓 **BSc in Information Technology**, AI Specialization – *Damascus University* (2021–present)
+- 🔭 **Currently working on:** Advanced AI simulations, NLP pipelines, real-time web/mobile applications, and 3D visual computing
+- 🌱 **Learning more about:** Generative AI, LangChain, and advanced visual intelligence techniques
+- 🧠 **Driven by:** Empowering individuals and organizations with AI solutions that drive meaningful change
+- 🌍 **Languages:** Arabic 🇸🇾 | English 🌍
+- 📫 **Contact me:** [tima302t@gmail.com](mailto:tima302t@gmail.com)
 
 ### 🚀 Tech Stack
 
