@@ -1,5 +1,5 @@
 <h1 align="center">Hello, I'm Tima 👋</h1>
-<h3 align="center">AI Specialist • Full-Stack Developer • Flutter Developer</h3>
+<h3 align="center">AI Specialist • Flutter Developer</h3>
 <h2 align="center">Creative Technologist | Problem Solver</h2>
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=tima-dawwa&label=Profile%20views&color=0e75b6&style=flat" alt="Profile views" />
