@@ -1,109 +1,500 @@
-<h1 align="center">Hello, I'm Tima 👋</h1>
-<h3 align="center">AI Specialist • Data Analysis • Flutter Developer</h3>
-<h2 align="center">Creative Technologist | Problem Solver</h2>
-<p align="center">
-  <img src="tima.png" alt="Tima's Photo" width="200" />
-</p>
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=tima-dawwa&label=Profile%20views&color=0e75b6&style=flat" alt="Profile views" />
-</p>
- 
-💡 I am a dedicated **AI Specialist** and **Front-Stack Developer** with a passion for building innovative systems that bridge the gap between cutting-edge technology and real-world solutions. My work spans deep learning models, mobile applications, and immersive 3D visual simulations, always with a focus on creating impactful outcomes.
+import React, { useState, useEffect, useRef } from 'react';
+import { Menu, X, Github, Linkedin, Mail, Phone, ChevronDown } from 'lucide-react';
 
-- 🎓 **BSc in Information Technology**, AI Specialization – *Damascus University* (2021–present)
-- 🔭 **Currently working on:** Advanced AI simulations, NLP pipelines, real-time web/mobile applications, and 3D visual computing
-- 🌱 **Learning more about:** Generative AI, LangChain, and advanced visual intelligence techniques
-- 🧠 **Driven by:** Empowering individuals and organizations with AI solutions that drive meaningful change
-- 🌍 **Languages:** Arabic 🇸🇾 | English 🌍
-- 📫 **Contact me:** [tima302t@gmail.com](mailto:tima302t@gmail.com)
+const Portfolio = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [visibleSections, setVisibleSections] = useState(new Set());
+  const observerRef = useRef(null);
 
----
+  // Scroll handler for navbar
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-### 🚀 Tech Stack
+  // Intersection Observer for scroll reveal
+  useEffect(() => {
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisibleSections((prev) => new Set([...prev, entry.target.id]));
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
 
-#### 💻 Programming Languages
-![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)
-![C#](https://img.shields.io/badge/CSharp-239120?style=for-the-badge&logo=csharp&logoColor=white)
-![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
-![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+    document.querySelectorAll('[data-reveal]').forEach((el) => {
+      observerRef.current?.observe(el);
+    });
 
-#### 📊 AI/ML Libraries
-![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
-![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
-![Keras](https://img.shields.io/badge/Keras-D00000?style=for-the-badge&logo=keras&logoColor=white)
-![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge&logo=matplotlib&logoColor=white)
-![Seaborn](https://img.shields.io/badge/Seaborn-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![HuggingFace](https://img.shields.io/badge/Hugging%20Face-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)
+    return () => observerRef.current?.disconnect();
+  }, []);
 
-#### 🎨 Frontend, Visualization & Frameworks
-![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
-![React](https://img.shields.io/badge/React.js-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Firebase](https://img.shields.io/badge/Firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black)
-![Three.js](https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white)
-![OpenGL](https://img.shields.io/badge/OpenGL-5586A4?style=for-the-badge&logo=opengl&logoColor=white)
-![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
+  const scrollToSection = (id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    setIsMenuOpen(false);
+  };
 
-#### 🛠️ Tools & Platforms
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white)
-![Anaconda](https://img.shields.io/badge/Anaconda-44A833?style=for-the-badge&logo=anaconda&logoColor=white)
+  const projects = [
+    {
+      icon: '🛍️',
+      title: 'RecoMindSystem',
+      description: 'A fashion-focused e-commerce platform integrating AI-powered recommendations, multilingual chatbot, and smart search capabilities. Combines e-commerce engineering with advanced AI components for multilingual, multimodal interaction (Arabic & English).',
+      features: 'Multilingual chatbot (text & image queries) using RAG; recommendation system (collaborative/content/hybrid); smart search; admin analytics dashboard; multimodal retrieval with AraBERT/BERT/BLIP2.',
+      tech: ['Flutter', 'Node.js', 'Express', 'MongoDB', 'Python', 'FastAPI', 'DeepSeek-V3', 'BERT', 'AraBERT', 'BLIP2', 'langdetect'],
+      tags: ['AI', 'Ecommerce', 'Chatbot', 'RecommendationSystem', 'MultilingualAI', 'Flutter', 'NodeJS', 'FastAPI']
+    },
+    {
+      icon: '🩺',
+      title: 'Dermatology Smart Expert System',
+      description: 'AI-assisted expert system for dermatology diagnosis using rule-based reasoning and explainable AI. Infers skin conditions through structured questioning and confidence factor reasoning, and explains results in natural language.',
+      tech: ['Python', 'FastAPI', 'Experta', 'React', 'LLM', 'AI Explanation Module'],
+      tags: ['ExpertSystem', 'AI', 'Healthcare', 'ExplainableAI', 'FastAPI', 'React']
+    },
+    {
+      icon: '🗜️',
+      title: 'RAR – File Compression Utility',
+      description: 'C# desktop application for file compression and decompression using Huffman and Shannon–Fano algorithms. Supports multi-file operations, AES encryption, and threaded execution.',
+      tech: ['C#', '.NET', 'Windows Forms', 'AES Encryption'],
+      tags: ['Compression', 'Encryption', 'CSharp', 'DesktopApp', 'Huffman', 'ShannonFano']
+    },
+    {
+      icon: '🚚',
+      title: 'Medicine Distribution – MPI Simulation',
+      description: 'Parallel programming simulation of medicine distribution using MPI. Models master/distributor/provincial nodes for efficient task distribution and load balancing. Educational demo of message passing.',
+      tech: ['C', 'MPI', 'MPICH', 'OpenMPI', 'Visual Studio'],
+      tags: ['ParallelProgramming', 'MPI', 'CProgramming', 'DistributedSystems', 'Simulation']
+    },
+    {
+      icon: '🔧',
+      title: 'Your Next Project',
+      description: 'This space is reserved for your upcoming innovative solution. Whether it\'s machine learning, web development, or system design - your next breakthrough starts here.',
+      tech: ['Coming Soon'],
+      tags: ['Placeholder', 'Future', 'Innovation']
+    },
+    {
+      icon: '🔭',
+      title: 'Future Innovation',
+      description: 'Another exciting project waiting to be built. Stay tuned for more cutting-edge solutions combining AI, development, and creative problem-solving.',
+      tech: ['In Progress'],
+      tags: ['Placeholder', 'Upcoming', 'Development']
+    }
+  ];
 
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 text-white overflow-x-hidden">
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+        
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        
+        body {
+          font-family: 'Inter', sans-serif;
+        }
+        
+        html {
+          scroll-behavior: smooth;
+        }
+        
+        /* Falling AI Animation */
+        @keyframes fall {
+          0% {
+            transform: translateY(-100px) rotate(0deg);
+            opacity: 0;
+          }
+          10% {
+            opacity: 0.3;
+          }
+          90% {
+            opacity: 0.3;
+          }
+          100% {
+            transform: translateY(100vh) rotate(360deg);
+            opacity: 0;
+          }
+        }
+        
+        .ai-rain {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          pointer-events: none;
+          z-index: 1;
+          overflow: hidden;
+        }
+        
+        .ai-drop {
+          position: absolute;
+          color: rgba(96, 165, 250, 0.15);
+          font-weight: 700;
+          font-family: 'Fira Code', monospace;
+          animation: fall linear infinite;
+          filter: blur(1px);
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+          .ai-drop {
+            animation: none;
+            opacity: 0.05;
+          }
+        }
+        
+        /* Glassmorphism */
+        .glass {
+          background: rgba(255, 255, 255, 0.05);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+        
+        .glass-strong {
+          background: rgba(255, 255, 255, 0.08);
+          backdrop-filter: blur(30px);
+          -webkit-backdrop-filter: blur(30px);
+          border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        
+        /* Reveal animations */
+        [data-reveal] {
+          opacity: 0;
+          transform: translateY(30px);
+          transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        [data-reveal].visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        
+        /* Gradient text */
+        .gradient-text {
+          background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #ec4899 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+          width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+          background: rgba(15, 23, 42, 0.5);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+          background: rgba(96, 165, 250, 0.5);
+          border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+          background: rgba(96, 165, 250, 0.7);
+        }
+        
+        /* Hover effects */
+        .project-card {
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .project-card:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 20px 60px rgba(96, 165, 250, 0.3);
+        }
+        
+        .btn-primary {
+          transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+          transform: scale(1.05);
+          box-shadow: 0 10px 40px rgba(96, 165, 250, 0.4);
+        }
+        
+        /* Tag animations */
+        .tag {
+          transition: all 0.2s ease;
+        }
+        
+        .tag:hover {
+          transform: scale(1.1);
+          background: rgba(96, 165, 250, 0.3);
+        }
+        
+        /* Focus styles for accessibility */
+        *:focus-visible {
+          outline: 2px solid #60a5fa;
+          outline-offset: 2px;
+        }
+        
+        /* Mobile menu animation */
+        .mobile-menu {
+          transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        
+        .mobile-menu.open {
+          transform: translateX(0);
+          opacity: 1;
+        }
+        
+        .mobile-menu.closed {
+          transform: translateX(100%);
+          opacity: 0;
+        }
+      `}</style>
 
----
+      {/* Falling AI Background */}
+      <div className="ai-rain" aria-hidden="true">
+        {[...Array(50)].map((_, i) => (
+          <div
+            key={i}
+            className="ai-drop"
+            style={{
+              left: `${Math.random() * 100}%`,
+              fontSize: `${12 + Math.random() * 20}px`,
+              animationDuration: `${8 + Math.random() * 10}s`,
+              animationDelay: `${Math.random() * 5}s`,
+            }}
+          >
+            AI
+          </div>
+        ))}
+      </div>
 
-### 📂 Notable Projects
+      {/* Navigation */}
+      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'glass-strong py-3' : 'py-6'}`}>
+        <div className="container mx-auto px-6 flex justify-between items-center">
+          <div className="text-2xl font-bold gradient-text">TD</div>
+          
+          {/* Desktop Menu */}
+          <div className="hidden md:flex space-x-8">
+            {['About', 'Projects', 'Contact'].map((item) => (
+              <button
+                key={item}
+                onClick={() => scrollToSection(item.toLowerCase())}
+                className="hover:text-blue-400 transition-colors duration-300 text-sm font-medium"
+              >
+                {item}
+              </button>
+            ))}
+          </div>
 
-#### 💡 AI & ML
-- 🧠 [RecoMindSystem](https://github.com/Tima-Dawwa/RecoMindSystem) – AI-powered recommendation system for personalized suggestions.  
-- 🩺 [Dermatology-Smart-Expert-System](https://github.com/Tima-Dawwa/Dermatology-Smart-Expert-System) – Python-based expert system for assisting in dermatology diagnosis.  
-- 📘 [Alrifai_Training-Task](https://github.com/Tima-Dawwa/Alrifai_Training-Task) – Training notebooks covering ML and AI fundamentals.  
-- 📰 [Subjectivity-in-News-Articles](https://github.com/Tima-Dawwa/Subjectivity-in-News-Articles) – LSTM model to detect subjectivity and bias in news reporting.  
-- 🚢 [Titanic - Machine Learning from Disaster](https://github.com/Tima-Dawwa/Titanic---Machine-Learning-from-Disaster) – Classical ML project predicting Titanic survival.  
-- 🌐 [NLP with Disaster Tweets](https://github.com/Tima-Dawwa/Natural-Language-Processing-with-Disaster-Tweets) – NLP classifier to detect disaster-related tweets.  
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden z-50"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
 
-#### 📱 Mobile & Web
-- 📊 [Medist-Dashboard](https://github.com/Tima-Dawwa/Medist-Dashboard) – Admin panel for managing medical supplies and inventory.  
-- 🏥 [Medist-Application](https://github.com/Tima-Dawwa/Medist-Mobile) – Flutter app for medical supply tracking with cross-platform support.  
-- ✈️ [Travel App - Mobile](https://github.com/Tima-Dawwa/Travel-App-Mobile) – Flutter travel app with Firebase Auth, chat, and push notifications.  
-- 🌍 [Travel App - Web](https://github.com/Tima-Dawwa/Travel-App-Web) – React-based web app for travel management.  
-- 🖼️ [Smart-Gallery](https://github.com/Tima-Dawwa/Smart-Gallery) – Flutter gallery app with AI-based image organization.  
-- 💻 [Tima-Dawwa](https://github.com/Tima-Dawwa/Tima-Dawwa) – Personal portfolio and profile repository.  
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="md:hidden absolute top-full left-0 w-full glass-strong py-6">
+            <div className="flex flex-col space-y-4 px-6">
+              {['About', 'Projects', 'Contact'].map((item) => (
+                <button
+                  key={item}
+                  onClick={() => scrollToSection(item.toLowerCase())}
+                  className="text-left hover:text-blue-400 transition-colors duration-300 text-lg"
+                >
+                  {item}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+      </nav>
 
-#### ⚙️ Systems & Java Projects
-- 💊 [Drug-Distribution-Mpi](https://github.com/Tima-Dawwa/Drug-Distribution-Mpi) – C# system for simulating distributed drug logistics using MPI.  
-- 📦 [RAR](https://github.com/Tima-Dawwa/RAR) – C# utility for handling file compression and extraction.  
-- 🖥️ [Compiler-Project](https://github.com/Tima-Dawwa/Compiler-Project) – Java-based compiler implementation for educational purposes.  
-- 🎮 [min-max-4Wins](https://github.com/Tima-Dawwa/min-max-4Wins) – Java game using Min-Max AI algorithm for 4-in-a-row.  
-- 🎲 [ZeroSquaresGame](https://github.com/Tima-Dawwa/ZeroSquaresGame) – Puzzle/strategy Java game with advanced state-based mechanics.  
+      {/* Hero Section */}
+      <section className="min-h-screen flex items-center justify-center relative z-10 px-6">
+        <div className="text-center max-w-4xl">
+          <div className="glass rounded-3xl p-12 md:p-16">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 gradient-text">
+              Tima Dawwa
+            </h1>
+            <p className="text-xl md:text-2xl mb-8 text-blue-200">
+              AI Specialist • Data Analysis • Flutter Developer
+            </p>
+            <p className="text-lg md:text-xl mb-10 text-gray-300 leading-relaxed">
+              Building the future with artificial intelligence
+            </p>
+            <button
+              onClick={() => scrollToSection('projects')}
+              className="btn-primary glass-strong px-8 py-4 rounded-full text-lg font-semibold inline-flex items-center gap-2"
+            >
+              View My Work
+              <ChevronDown className="animate-bounce" size={20} />
+            </button>
+          </div>
+        </div>
+      </section>
 
----
+      {/* About Section */}
+      <section id="about" className="py-20 relative z-10 px-6">
+        <div className="container mx-auto max-w-6xl">
+          <div
+            data-reveal
+            className={visibleSections.has('about') ? 'visible' : ''}
+            id="about"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center gradient-text">
+              About Me
+            </h2>
+            <div className="glass rounded-3xl p-8 md:p-12">
+              <p className="text-lg md:text-xl leading-relaxed mb-8 text-gray-200">
+                I am a dedicated AI Specialist and Front-Stack Developer with a passion for building innovative systems that bridge the gap between cutting-edge technology and real-world solutions. My work spans deep learning models, mobile applications, and immersive 3D visual simulations, always with a focus on creating impactful outcomes.
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {['Machine Learning', 'Deep Learning', 'Flutter Development', 'Data Analysis', 'FastAPI', 'System Design', 'NLP & LLMs', 'Problem Solving'].map((skill) => (
+                  <div key={skill} className="glass-strong rounded-xl p-4 text-center hover:scale-105 transition-transform">
+                    <p className="font-semibold text-blue-300">{skill}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-### 🎓 Volunteer Experience
-- 👩‍🏫 **Lecture Writer – RBCs**: Simplified technical content for student use.  
-- 💉 **AI Developer – MedLife Athar**: Built tools for medical prediction, annotation, and evaluation.  
+      {/* Projects Section */}
+      <section id="projects" className="py-20 relative z-10 px-6">
+        <div className="container mx-auto max-w-7xl">
+          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center gradient-text">
+            Featured Projects
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project, idx) => (
+              <div
+                key={idx}
+                data-reveal
+                className={`project-card glass rounded-2xl p-6 ${visibleSections.has('projects') ? 'visible' : ''}`}
+                id={idx === 0 ? 'projects' : undefined}
+                style={{ transitionDelay: `${idx * 100}ms` }}
+              >
+                <div className="text-5xl mb-4">{project.icon}</div>
+                <h3 className="text-2xl font-bold mb-3 text-blue-300">{project.title}</h3>
+                <p className="text-gray-300 mb-4 leading-relaxed">{project.description}</p>
+                {project.features && (
+                  <p className="text-sm text-gray-400 mb-4 italic">
+                    <strong>Key Features:</strong> {project.features}
+                  </p>
+                )}
+                <div className="mb-4">
+                  <p className="text-sm text-gray-400 mb-2 font-semibold">Tech Stack:</p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((tech) => (
+                      <span key={tech} className="text-xs bg-blue-900/30 px-3 py-1 rounded-full border border-blue-500/30">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="tag text-xs glass-strong px-3 py-1 rounded-full cursor-pointer border border-blue-400/30"
+                    >
+                      #{tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
----
+      {/* Contact Section */}
+      <section id="contact" className="py-20 relative z-10 px-6">
+        <div className="container mx-auto max-w-4xl">
+          <div
+            data-reveal
+            className={visibleSections.has('contact') ? 'visible' : ''}
+            id="contact"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center gradient-text">
+              Get In Touch
+            </h2>
+            <div className="glass rounded-3xl p-8 md:p-12">
+              <p className="text-lg text-center mb-10 text-gray-300">
+                Let's collaborate on the next big thing. Feel free to reach out!
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <a
+                  href="https://www.linkedin.com/in/tima-dawwa-698b13267"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="glass-strong rounded-xl p-6 flex items-center gap-4 hover:scale-105 transition-transform"
+                >
+                  <Linkedin size={32} className="text-blue-400" />
+                  <div>
+                    <p className="font-semibold">LinkedIn</p>
+                    <p className="text-sm text-gray-400">Professional Network</p>
+                  </div>
+                </a>
+                
+                <a
+                  href="https://github.com/TimaDawwa"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="glass-strong rounded-xl p-6 flex items-center gap-4 hover:scale-105 transition-transform"
+                >
+                  <Github size={32} className="text-purple-400" />
+                  <div>
+                    <p className="font-semibold">GitHub</p>
+                    <p className="text-sm text-gray-400">@TimaDawwa</p>
+                  </div>
+                </a>
+                
+                <a
+                  href="mailto:tima302t@gmail.com"
+                  className="glass-strong rounded-xl p-6 flex items-center gap-4 hover:scale-105 transition-transform"
+                >
+                  <Mail size={32} className="text-pink-400" />
+                  <div>
+                    <p className="font-semibold">Email</p>
+                    <p className="text-sm text-gray-400">tima302t@gmail.com</p>
+                  </div>
+                </a>
+                
+                <a
+                  href="tel:@TimaDawwa"
+                  className="glass-strong rounded-xl p-6 flex items-center gap-4 hover:scale-105 transition-transform"
+                >
+                  <Phone size={32} className="text-green-400" />
+                  <div>
+                    <p className="font-semibold">Phone</p>
+                    <p className="text-sm text-gray-400">@TimaDawwa</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-### 📊 GitHub Stats
+      {/* Footer */}
+      <footer className="py-8 text-center text-gray-400 relative z-10">
+        <p>&copy; 2025 Tima Dawwa. Built with React & AI.</p>
+      </footer>
+    </div>
+  );
+};
 
-![Tima's GitHub Stats](https://github-readme-stats.vercel.app/api?username=tima-dawwa&show_icons=true&theme=radical)  
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=tima-dawwa&layout=compact&theme=radical)  
-[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=tima-dawwa&theme=radical&hide_border=false)](https://git.io/streak-stats)  
-[![trophy](https://github-profile-trophy.vercel.app/?username=tima-dawwa&theme=radical&margin-w=10&margin-h=10)](https://github.com/tima-dawwa)  
-![GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=tima-dawwa&theme=github-compact&hide_border=true)  
-
----
-
-### 🌐 Connect with Me
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/tima-dawwa-698b13267)  
-[![Gmail](https://img.shields.io/badge/Gmail-red?style=for-the-badge&logo=gmail&logoColor=white)](mailto:tima302t@gmail.com)  
-[![Telegram](https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/timadawwa)  
-
----
-
-> “Always building. Always learning. Always pushing boundaries.”
+export default Portfolio;
