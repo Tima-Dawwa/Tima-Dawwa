@@ -3,7 +3,7 @@
 </div>
 
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&amp;weight=600&amp;size=24&amp;duration=4000&amp;pause=1000&amp;color=00ADB5&amp;center=true&amp;vCenter=true&amp;width=800&amp;height=60&amp;lines=AI+Engineer;IT+Graduate+(Ranked+Highest:+98%25);Data+Analyst+%26+Problem+Solver;Building+Intelligent+%26+Scalable+Solutions;Creative+Technologist" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=24&duration=4000&pause=1000&color=00ADB5&center=true&vCenter=true&width=800&height=60&lines=AI+Engineer;IT+Graduate+(Ranked+Highest:+98%25);Data+Analyst+%26+Problem+Solver;Building+Intelligent+%26+Scalable+Solutions;Creative+Technologist" alt="Typing SVG" />
 </div>
 
 <p align="center">
@@ -70,16 +70,16 @@ My work spans across deep learning models, natural language processing, data ana
 
 <p align="center">
   <a href="https://github.com/Tima-Dawwa">
-    <img src="https://github-readme-stats.vercel.app/api?username=Tima-Dawwa&amp;show_icons=true&amp;theme=synthwave&amp;hide_border=true" alt="Tima's GitHub Stats" width="48%" />
+    <img src="https://github-readme-stats.vercel.app/api?username=Tima-Dawwa&show_icons=true&theme=synthwave&hide_border=true" alt="Tima's GitHub Stats" />
   </a>
   <a href="https://github.com/Tima-Dawwa">
-    <img src="https://github-readme-streak-stats.herokuapp.com/?user=Tima-Dawwa&amp;theme=synthwave&amp;hide_border=true" alt="Tima's GitHub Streak" width="48%" />
+    <img src="https://github-readme-streak-stats.herokuapp.com/?user=Tima-Dawwa&theme=synthwave&hide_border=true" alt="Tima's GitHub Streak" />
   </a>
 </p>
 
 <p align="center">
   <a href="https://github.com/Tima-Dawwa">
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Tima-Dawwa&amp;layout=compact&amp;theme=synthwave&amp;hide_border=true" alt="Top Languages" width="50%"/>
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Tima-Dawwa&layout=compact&theme=synthwave&hide_border=true" alt="Top Languages" />
   </a>
 </p>
 
