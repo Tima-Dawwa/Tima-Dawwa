@@ -70,16 +70,7 @@ My work spans across deep learning models, natural language processing, data ana
 
 <p align="center">
   <a href="https://github.com/Tima-Dawwa">
-    <img src="https://github-readme-stats.vercel.app/api?username=Tima-Dawwa&show_icons=true&theme=synthwave&hide_border=true" alt="Tima's GitHub Stats" />
-  </a>
-  <a href="https://github.com/Tima-Dawwa">
     <img src="https://github-readme-streak-stats.herokuapp.com/?user=Tima-Dawwa&theme=synthwave&hide_border=true" alt="Tima's GitHub Streak" />
-  </a>
-</p>
-
-<p align="center">
-  <a href="https://github.com/Tima-Dawwa">
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Tima-Dawwa&layout=compact&theme=synthwave&hide_border=true" alt="Top Languages" />
   </a>
 </p>
 
