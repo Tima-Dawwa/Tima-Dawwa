@@ -3,7 +3,7 @@
 </div>
 
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&duration=4000&pause=1000&color=E2E8F0&center=true&vCenter=true&width=800&height=80&lines=🤖+AI+Engineer;🎓+IT+Graduate+(Ranked+Highest:+98%25);📊+Data+Analyst+%26+Problem+Solver;🚀+Building+Intelligent+%26+Scalable+Solutions;💻+Creative+Technologist" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&duration=4000&pause=1000&color=00ADB5&center=true&vCenter=true&width=800&height=60&lines=AI+Engineer;IT+Graduate+(Ranked+Highest:+98%25);Data+Analyst+%26+Problem+Solver;Building+Intelligent+%26+Scalable+Solutions;Creative+Technologist" alt="Typing SVG" />
 </div>
 
 <p align="center">
@@ -13,7 +13,7 @@
 
 <p align="center">
   <a href="mailto:tima302t@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
-  <a href="https://www.linkedin.com/in/tima-dawwa/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+  <a href="https://sy.linkedin.com/in/tima-dawwa-698b13267"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
   <a href="https://github.com/Tima-Dawwa"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
 </p>
 
@@ -70,16 +70,16 @@ My work spans across deep learning models, natural language processing, data ana
 
 <p align="center">
   <a href="https://github.com/Tima-Dawwa">
-    <img src="https://github-readme-stats.vercel.app/api?username=Tima-Dawwa&show_icons=true&theme=synthwave&hide_border=true&bg_color=0D1117&title_color=00ADB5" alt="Tima's GitHub Stats" width="48%" />
+    <img src="https://github-readme-stats.vercel.app/api?username=Tima-Dawwa&show_icons=true&theme=synthwave&hide_border=true" alt="Tima's GitHub Stats" width="48%" />
   </a>
   <a href="https://github.com/Tima-Dawwa">
-    <img src="https://github-readme-streak-stats.herokuapp.com/?user=Tima-Dawwa&theme=synthwave&hide_border=true&background=0D1117&ring=00ADB5&fire=00ADB5" alt="Tima's GitHub Streak" width="48%" />
+    <img src="https://github-readme-streak-stats.herokuapp.com/?user=Tima-Dawwa&theme=synthwave&hide_border=true" alt="Tima's GitHub Streak" width="48%" />
   </a>
 </p>
 
 <p align="center">
   <a href="https://github.com/Tima-Dawwa">
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Tima-Dawwa&layout=compact&theme=synthwave&hide_border=true&bg_color=0D1117&title_color=00ADB5" alt="Top Languages" width="50%"/>
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Tima-Dawwa&layout=compact&theme=synthwave&hide_border=true" alt="Top Languages" width="50%"/>
   </a>
 </p>
 
