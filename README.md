@@ -14,6 +14,7 @@
 <p align="center">
   <a href="mailto:tima302t@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
   <a href="https://sy.linkedin.com/in/tima-dawwa-698b13267"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+  <a href="https://tima-dawwa.github.io/"><img src="https://img.shields.io/badge/Portfolio-252525?style=for-the-badge&logo=Vercel&logoColor=white" alt="Portfolio" /></a>
   <a href="https://github.com/Tima-Dawwa"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
 </p>
 
@@ -55,6 +56,7 @@ My work spans across deep learning models, natural language processing, data ana
 
 | Project | Description | Tech Stack |
 |---------|-------------|------------|
+| [**OMID: An Intelligent System for Knowledge Extraction and Textual Analysis of Arabic News**](https://github.com/arabic-news-analyzer/omid.github/blob/main/Organization_README.md) | A comprehensive AI system for analyzing Arabic news, scoring an outstanding 98%. | Python, NLP, Machine Learning, Full-Stack |
 | [**Dermatology Smart Expert System**](https://github.com/Tima-Dawwa/Dermatology-Smart-Expert-System) | An intelligent system for dermatological diagnosis. | Python, ML |
 | [**RecoMindSystem**](https://github.com/Tima-Dawwa/RecoMindSystem) | A personalized recommendation engine built with advanced algorithms. | Jupyter, Python |
 | [**NLP with Disaster Tweets**](https://github.com/Tima-Dawwa/Natural-Language-Processing-with-Disaster-Tweets) | Natural Language Processing model to classify emergency tweets. | NLP, Scikit-Learn |
